@@ -20,6 +20,7 @@
     "scripts": {
         "ng": "ng",
         "start": "ionic serve --browser=$MOODLE_APP_BROWSER --ssl",
+        "start:http": "ionic serve --browser=$MOODLE_APP_BROWSER",
         "serve:test": "NODE_ENV=testing ionic serve --no-open",
         "build": "NODE_OPTIONS=--max-old-space-size=8192 ionic build --configuration=development",
         "build:prod": "NODE_OPTIONS=--max-old-space-size=8192 NODE_ENV=production ionic build --prod",
@@ -36,7 +37,7 @@
         "test:coverage": "NODE_ENV=testing gulp && jest --coverage",
         "lint": "NODE_OPTIONS=--max-old-space-size=8192 ng lint",
         "ionic:serve:before": "gulp",
-        "ionic:serve": "cross-env-shell ./scripts/serve.sh",
+        "ionic:serve": "node ./scripts/serve.js",
         "ionic:build:before": "gulp",
         "postinstall": "patch-package && cd cordova-plugin-moodleapp && npm install",
         "lang:update-langpacks": "./scripts/update_langpacks.sh",
@@ -177,7 +178,7 @@
         "vinyl": "3.0.1"
     },
     "engines": {
-        "node": ">=v22.17 <23"
+        "node": ">=v22.17 <25"
     },
     "cordova": {
         "platforms": [
