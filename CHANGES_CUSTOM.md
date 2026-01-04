@@ -29,3 +29,9 @@ This document tracks changes made to the official Moodle App codebase to support
 ## 3. Deployment Notes
 - **Android Runtime:** Requires `native-run` to be installed globally (`npm install -g native-run`).
 - **Environment Variables:** `JAVA_HOME` (JDK 17) and `ANDROID_HOME` must be correctly set in the system Path for `ionic cordova run android` to work.
+
+## 4. Branding & Site Configuration
+### `moodle.config.json`
+- **Change:** Populated "sites" array.
+- **Value:** `[{"url": "https://learn.darassa.academy", "name": "Darassa Academy"}]`
+- **Reason:** To force the application to connect solely to the specific Darassa Academy Moodle instance, bypassing the site entry screen.
