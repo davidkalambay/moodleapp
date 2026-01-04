@@ -58,3 +58,26 @@ This document tracks changes made to the official Moodle App codebase to support
 ### Branding (Images)
 - **Change:** Replaced `resources/icon.png` and `resources/splash.png`.
 - **Reason:** Updated with the new Darassa Academy assets (Symbol for Icon, Full Logo for Splash).
+
+### `src/index.html`
+- **Change:** Updated `<title>` tag.
+- **Value:** "Darassa Academy"
+- **Reason:** To display the correct app name in the browser tab.
+
+### UI & Icons (Premium Design)
+- **Change:** Custom CSS in `theme.custom.scss`.
+- **Value:** Implemented "Poppins" font, modern cards, gradients, and custom icon styling.
+- **Change:** Updated `$activity-icon-colors` in `globals.variables.scss`.
+- **Value:** Curated "Darassa Purple" palette (purple, pink, deep blue) for course activities.
+- **Reason:** To replace the default rainbow colors with a cohesive premium brand palette.
+
+## 5. Feature Modifications
+
+### `src/core/features/courses/services/courses.ts`
+- **Change:** Modified `isDownloadCoursesDisabledInSite` to always return `false`.
+- **Reason:** To remove the default limit of 2 offline downloadable courses. This bypasses the check for `CORE_COURSES_DOWNLOAD_FEATURE_NAME` and `site.isOfflineDisabled()`, allowing unlimited offline course downloads.
+
+## 6. Documentation
+### `NOTIFICATIONS_FCM_SETUP.md`
+- **Change:** Created a guide for setting up Firebase Cloud Messaging (FCM).
+- **Reason:** To provide a cost-effective alternative to the default notification system (Airnotifier) which may require a subscription for high volume.

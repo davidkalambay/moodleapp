@@ -1,21 +1,198 @@
 /*
- * App CUSTOM theme SCSS
+ * App CUSTOM theme SCSS - Darassa Academy Premium Design
  * ----------------------------------------------------------------------------
- * Place here custom styles.
  */
 
-/*
- * Light Theme
- * -------------------------------------------
- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 :root {
+    --ion-font-family: 'Poppins', sans-serif;
 
+    /* Premium Modern Color Palette Updates */
+    --darassa-gradient: linear-gradient(135deg, #7D256C 0%, #501043 100%);
+    --darassa-card-shadow: 0 8px 24px rgba(125, 37, 108, 0.08); /* Tinged with brand color */
+
+    --ion-color-primary: #7D256C;
+    --ion-color-primary-rgb: 125, 37, 108;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255, 255, 255;
+    --ion-color-primary-shade: #6e205f;
+    --ion-color-primary-tint: #8a3b7b;
 }
 
-/*
- * Dark Theme
- * -------------------------------------------
- */
-:root.dark {
+/* 1. TYPOGRAPHY & GLOBAL FEEL */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
+/* 2. HEADERS (App Bar) */
+ion-header ion-toolbar {
+    --background: #ffffff; /* Clean white header */
+    --color: #2c2c2c;
+    --border-width: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03); /* Extremely subtle separator */
+}
+
+/* Make the title bold and brand colored */
+ion-header ion-title {
+    font-weight: 700 !important;
+    letter-spacing: -0.5px;
+    color: #7D256C;
+}
+
+/* 3. BUTTONS (Premium Gradients) */
+ion-button.button-solid {
+    --background: var(--darassa-gradient);
+    --border-radius: 12px;
+    --box-shadow: 0 4px 14px rgba(125, 37, 108, 0.3); /* Colored shadow glow */
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: none; /* Modern apps don't uppercase buttons */
+}
+
+/* 4. CARDS & LISTS (The "Floating" Look) */
+ion-card,
+.core-course-list-item,
+.core-course-module-card {
+    border-radius: 20px !important;
+    background: #ffffff;
+    box-shadow: var(--darassa-card-shadow) !important;
+    border: 1px solid rgba(0,0,0,0.02); /* Very faint border */
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Add subtle interaction */
+ion-card:active, .core-course-list-item:active {
+    transform: scale(0.98);
+}
+
+/* 5. BOTTOM NAVIGATION (Tab Bar) */
+ion-tab-bar {
+    --background: #ffffff;
+    --border: none;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.04);
+    height: 60px;
+    padding-bottom: 5px;
+}
+
+ion-tab-button {
+    --color: #a0a0a0;
+    --color-selected: #7D256C;
+}
+
+ion-tab-button ion-icon {
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+/* Label styling in tabs */
+ion-tab-button ion-label {
+    font-weight: 500;
+    font-size: 11px;
+}
+
+/* 6. INPUTS & FORMS (Login Screen) */
+ion-item.item-input {
+    --background: #f8f9fa;
+    --border-radius: 12px;
+    margin-bottom: 15px;
+    --padding-start: 15px;
+    --border-color: transparent;
+    --highlight-color-valid: #7D256C;
+    --highlight-color-focused: #7D256C;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.core-login-page .logo {
+    margin-bottom: 30px;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+/* 7. CUSTOM COURSE PROGRESS BAR */
+progress-bar, ion-progress-bar {
+    --progress-background: #e9ecef;
+    --buffer-background: #e9ecef;
+    --background: var(--darassa-gradient);
+    height: 8px;
+    border-radius: 4px;
+}
+
+/* 8. DARK MODE ADJUSTMENTS */
+:root.dark ion-header ion-toolbar {
+    --background: #1e1e1e;
+    --color: #ffffff;
+}
+
+:root.dark ion-card,
+:root.dark .core-course-list-item {
+    background: #2a2a2a;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+}
+
+:root.dark ion-item.item-input {
+    --background: #2a2a2a;
+    --color: #ffffff;
+}
+
+
+/* 9. PREMIUM ICONOGRAPHY */
+
+/* Activity Icons (The colorful squares in course content) */
+.core-course-module-icon,
+img.activityicon,
+.item-media img {
+    border-radius: 12px !important; /* Squircle shape */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Pop out */
+    padding: 2px; /* White frame effect inside shadow */
+    background-color: #ffffff;
+}
+
+/* Generic UI Icons */
+ion-icon {
+    /* Subtle enhancement to make standard icons feel weightier */
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+}
+
+/* Tab Bar Icons - Enhanced */
+ion-tab-button ion-icon {
+    font-size: 26px;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+ion-tab-button.tab-selected ion-icon {
+    transform: translateY(-4px); /* Jump up when selected */
+    filter: drop-shadow(0 4px 6px rgba(125, 37, 108, 0.4)); /* Glow */
+    color: #7D256C;
+}
+
+/* Back Button & Navigation Icons */
+ion-back-button, ion-menu-button {
+    --color: #7D256C; /* Brand color navigation */
+    opacity: 0.9;
+}
+
+/* 10. FORCE ACTIVITY ICON COLORS (Premium Palette) */
+/* Assignments - Dark Pink */
+img.activityicon[src*="assign"] { background-color: #c2185b !important; }
+
+/* Forums - Purple */
+img.activityicon[src*="forum"] { background-color: #7b1fa2 !important; }
+
+/* Quizzes - Pink */
+img.activityicon[src*="quiz"] { background-color: #d81b60 !important; }
+
+/* Resources (File, Folder, Page, URL) - Blue */
+img.activityicon[src*="resource"],
+img.activityicon[src*="folder"],
+img.activityicon[src*="page"],
+img.activityicon[src*="url"] {
+    background-color: #1976d2 !important;
+}
+
+/* Ensure the icon image itself has some padding/margin if needed */
+.core-course-module-handler .item-media {
+   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
 }

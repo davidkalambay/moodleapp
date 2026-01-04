@@ -129,12 +129,12 @@ $activity-icon-background-colors: (
 
 // Moodle 4.4 onwards.
 $activity-icon-colors: (
-    administration: #da58ef,
-    assessment: #f90086,
-    collaboration: #5b40ff,
-    communication: #eb6200,
-    content: #0099ad,
-    interactivecontent: #8d3d1b
+    administration: #7D256C,     // Brand
+    assessment: #c2185b,         // Dark Pink
+    collaboration: #4a148c,      // Deep Purple
+    communication: #7b1fa2,      // Purple
+    content: #1976d2,            // Blue (Complimentary)
+    interactivecontent: #d81b60  // Pink
 ) !default;
 
 $activity-icon-color-filters: (
