@@ -98,7 +98,7 @@
     "onlyallowlistedsites": false,
     "forcedefaultlanguage": false,
     "privacypolicy": "https://moodle.net/moodle-app-privacy/",
-    "notificoncolor": "#f98012",
+    "notificoncolor": "#7D256C",
     "enableanalytics": false,
     "enableonboarding": true,
     "forceColorScheme": "",

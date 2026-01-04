@@ -49,3 +49,12 @@ This document tracks changes made to the official Moodle App codebase to support
 - **Change:** Updated App ID to `com.darassa.academy` and URL Scheme to `darassaacademy`.
 - **Files Modified:** `moodle.config.json`, `config.xml`.
 - **Reason:** To distinctively identify the application and prevent conflicts with the official Moodle app.
+
+### Branding (Colors)
+- **Change:** Updated `$brand-color` in `globals.variables.scss` and `"notificoncolor"` in `moodle.config.json`.
+- **Value:** `#7D256C` (Darassa Purple)
+- **Reason:** Extracted from the provided Darassa Academy logo.
+
+### Branding (Images)
+- **Change:** Replaced `resources/icon.png` and `resources/splash.png`.
+- **Reason:** Updated with the new Darassa Academy assets (Symbol for Icon, Full Logo for Splash).
